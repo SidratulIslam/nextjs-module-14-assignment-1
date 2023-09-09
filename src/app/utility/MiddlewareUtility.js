@@ -14,7 +14,7 @@ export async function CheckCookieAuth(req) {
     } catch (e) {
         let token = req.cookies.get('token');
         let payload= await VerifyToken(token['value'])
-        return NextResponse.json({status:false,message:token})
+        return NextResponse.json({status:false,message:payload})
         // return NextResponse.redirect(new URL('/login', req.url))
     }
 
