@@ -8,8 +8,8 @@ export async function POST(req,res) {
     let password=JsonBody['password'];
     let cookieMail = req.cookies.get('email')['value'];
     let cookiePassword = req.cookies.get('password')['value'];
-    console.log(cookieMail)
-    if(email===cookieMail && password===cookiePassword){
+    
+    if(email==cookieMail && password==cookiePassword){
         let Cookie =await TokenCookie(email);
         return NextResponse.json(
             {status:true,message:"Request completed"},
